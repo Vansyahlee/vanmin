@@ -1,13 +1,11 @@
 
 <div align="center">
 
-<img src="Frontend/src/assets/fas-ai/fas-ai-logo.png" alt="PT FAS Logo" width="200">
+<img src="Frontend/src/assets/fas-ai/fas-ai-logo.png" alt="FAS Logo" width="280">
 
-# PT. FURI ANUGERAH SEJAHTERA
+# FAS
 
-### Enterprise Distribution & Business Management System
-
-Sistem manajemen distribusi, pergudangan, keuangan, dan pengambilan keputusan berbasis data.
+### Full-Stack Application
 
 ![Go](https://img.shields.io/badge/Go-1.26-00ADD8?style=for-the-badge&logo=go&logoColor=white)
 ![Vue.js](https://img.shields.io/badge/Vue.js-3-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white)
@@ -17,12 +15,6 @@ Sistem manajemen distribusi, pergudangan, keuangan, dan pengambilan keputusan be
 </div>
 
 ---
-
-## About PT. FAS
-
-PT. FAS merupakan aplikasi manajemen internal perusahaan yang mengintegrasikan seluruh proses operasional ke dalam satu sistem.
-
-Sistem dirancang menggunakan backend Go, frontend Vue 3, dan database PostgreSQL.
 
 ## Technology Stack
 
@@ -38,108 +30,79 @@ Sistem dirancang menggunakan backend Go, frontend Vue 3, dan database PostgreSQL
 | Authentication | Role-Based Access Control |
 | Decision Support | K-Means & Decision Tree |
 
-## Main Modules
-
-- Overview Dashboard
-- Inventory & Stock Management
-- Sales Order & Operations
-- Warehouse Management
-- Distribution Management
-- Finance & Accounting
-- Invoice & Accounts Receivable
-- Payment Management
-- Tax & Financial Reporting
-- Finance Analytics
-- FAS Intelligence
-- User Management & Access Control
-
 ## System Architecture
 
-Frontend (Vue 3 + Vite)
+```text
+     Vue 3 + Vite
+           |
+           v
+     Go REST API
+           |
+           v
+      PostgreSQL
+```
 
-↓
+The backend handles application logic, authentication, data processing, and decision-support services.
 
-Backend REST API (Go)
+---
 
-↓
+## Development
 
-PostgreSQL Database
-
-The backend handles business logic, authentication, financial processing, warehouse operations, and decision-support services.
-
-## Project Structure
-
-    vanmin/
-    ├── Backend/
-    │   ├── fas-server/
-    │   │   └── api/
-    │   ├── handlers/
-    │   ├── internal/
-    │   │   ├── config/
-    │   │   └── database/
-    │   ├── middleware/
-    │   ├── services/
-    │   ├── go.mod
-    │   └── go.sum
-    │
-    ├── Frontend/
-    │   ├── public/
-    │   ├── src/
-    │   │   ├── assets/
-    │   │   ├── components/
-    │   │   ├── router/
-    │   │   ├── services/
-    │   │   ├── stores/
-    │   │   └── views/
-    │   ├── package.json
-    │   └── vite.config.js
-    │
-    ├── docker-compose.yml
-    ├── .gitignore
-    └── README.md
-
-## Backend Development
+### Backend Development
 
 Requirements:
 
 - Go 1.26.5
 - PostgreSQL
 
-From the Backend directory:
+Run the backend:
 
-    go test ./...
+```bash
+cd Backend
 
-    go run ./fas-server/api
+go test ./...
 
-Configure the required environment variables locally before running the application.
+go run ./fas-server/api
+```
 
-## Frontend Development
+Configure the required environment variables locally before starting the application.
 
-From the Frontend directory:
+### Frontend Development
 
-    npm install
+Install dependencies:
 
-    npm run dev
+```bash
+cd Frontend
 
-Production build:
+npm install
+```
 
-    npm run build
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+---
 
 ## Security
 
-This project is intended for internal business operations.
-
-- Keep credentials and API keys in environment variables.
-- Do not commit .env files containing secrets.
-- Restrict access to company financial and operational data.
-- Apply role-based authorization to protected endpoints.
+- Store credentials and API keys in environment variables.
+- Never commit sensitive `.env` files.
+- Use role-based access control.
+- Protect private application data.
+- Validate and test changes before deployment.
 
 ---
 
 <div align="center">
 
-**PT. FURI ANUGERAH SEJAHTERA**
-
-Built with Go, Vue 3, and PostgreSQL.
+<sub>Built with Go, Vue.js, PostgreSQL & Docker.</sub>
 
 </div>
