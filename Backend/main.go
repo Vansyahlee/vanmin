@@ -2,52 +2,108 @@ package main
 
 import (
 	"context"
-	"fmt"
+	"encoding/json"
 	"log"
-	"os"
+	"net/http"
+	"time"
 
+	"github.com/google/uuid"
 	"github.com/jackc/pgx/v5/pgxpool"
+
+	"furi-backend/services"
 )
 
+type PredictRequest struct {
+	Jumlah float64 `json:"jumlah"`
+	ClQty  float64 `json:"cl_qty"`
+}
+
+type PredictResponse struct {
+	ID          string  `json:"id"`
+	Jumlah      float64 `json:"jumlah"`
+	ClQty       float64 `json:"cl_qty"`
+	Cluster     string  `json:"cluster"`
+	Rekomendasi string  `json:"rekomendasi"`
+	Waktu       string  `json:"waktu"`
+}
+
+var dbPool *pgxpool.Pool
+
 func main() {
-	// 1. Retrieve the database connection string from the environment variable.
-	// Example format: postgres://user:password@localhost:5432/dbname
-	dbURL := os.Getenv("DATABASE_URL")
-	if dbURL == "" {
-		log.Fatal("Error: DATABASE_URL environment variable is not set")
-	}
+	dbURL := "postgres://postgres:postgres@localhost:5432/fas_db?sslmode=disable"
 
-	// 2. Parse the connection string into a configuration object.
-	config, err := pgxpool.ParseConfig(dbURL)
+	var err error
+	dbPool, err = pgxpool.New(context.Background(), dbURL)
 	if err != nil {
-		log.Fatalf("Unable to parse database configuration: %v\n", err)
+		log.Fatalf("Gagal konek ke database: %v", err)
+	}
+	defer dbPool.Close()
+
+	if err := dbPool.Ping(context.Background()); err != nil {
+		log.Fatalf("Gagal ping database: %v", err)
+	}
+	log.Println("✅ Berhasil terhubung ke PostgreSQL (fas_db)!")
+
+	http.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]string{
+			"status":  "ok",
+			"message": "Server PT. FAS Full DB Mode jalan!",
+		})
+	})
+
+	http.HandleFunc("/api/v1/predictions", handlePredict)
+
+	port := ":8080"
+	log.Printf("🚀 Server Backend PT. FAS jalan di http://localhost%s", port)
+	log.Println("🧠 Otak Decision Tree + Database siap menerima transaksi...")
+
+	if err := http.ListenAndServe(port, nil); err != nil {
+		log.Fatal("Server mati: ", err)
+	}
+}
+
+func handlePredict(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, "Harus pakai method POST!", http.StatusMethodNotAllowed)
+		return
 	}
 
-	// 3. Optional: Configure the connection pool settings.
-	// For example, you can adjust connection limits, idle timeouts, etc.
-	// config.MaxConns = 10
-	// config.MinConns = 2
+	var req PredictRequest
+	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		http.Error(w, "Format JSON salah!", http.StatusBadRequest)
+		return
+	}
 
-	// 4. Initialize the connection pool.
-	// We use context.Background() as the base context.
-	ctx := context.Background()
-	pool, err := pgxpool.NewWithConfig(ctx, config)
+	cluster := services.TentukanPrioritas(req.Jumlah, req.ClQty)
+	rekomendasi := services.RekomendasiDistribusi(cluster)
+	predictID := uuid.NewString()
+	now := time.Now()
+
+	_, err := dbPool.Exec(context.Background(), `
+		INSERT INTO invoices (id, invoice_number, store_name, subtotal, ppn_percent,
+			ppn_amount, total, cl_qty, cluster, recommendation)
+		VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`,
+		predictID,
+		"PRED-"+now.Format("20060102150405"),
+		"SIMULASI API",
+		req.Jumlah, 12.00, req.Jumlah*0.12, req.Jumlah*1.12,
+		int(req.ClQty), cluster, rekomendasi,
+	)
 	if err != nil {
-		log.Fatalf("Unable to create connection pool: %v\n", err)
+		log.Printf("⚠️ Gagal simpan ke DB: %v", err)
+		http.Error(w, "Gagal simpan ke database", http.StatusInternalServerError)
+		return
 	}
+	log.Printf("💾 Transaksi tersimpan sebagai %s", cluster)
 
-	// Ensure that the connection pool is properly closed when the application shuts down.
-	defer pool.Close()
-
-	// 5. Verify the connection by pinging the database.
-	if err := pool.Ping(ctx); err != nil {
-		log.Fatalf("Unable to ping the database: %v\n", err)
-	}
-
-	fmt.Println("Successfully initialized a secure connection pool to PostgreSQL!")
-
-	// Now you can safely use the `pool` object to execute your queries.
-	// Example query:
-	// var count int
-	// err = pool.QueryRow(ctx, "SELECT count(*) FROM my_table").Scan(&count)
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(PredictResponse{
+		ID:          predictID,
+		Jumlah:      req.Jumlah,
+		ClQty:       req.ClQty,
+		Cluster:     cluster,
+		Rekomendasi: rekomendasi,
+		Waktu:       now.Format("2006-01-02 15:04:05"),
+	})
 }

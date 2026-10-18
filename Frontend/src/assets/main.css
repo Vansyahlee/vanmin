@@ -1,0 +1,1249 @@
+@import "tailwindcss";
+
+:root {
+    --fas-bg: #070b14;
+    --fas-surface: #0b101b;
+    --fas-card: #0c121e;
+    --fas-elevated: #111827;
+    --fas-input: #0a111d;
+    --fas-table-head: #0e1726;
+    --fas-table-hover: rgba(255, 255, 255, 0.025);
+
+    --fas-border: rgba(255, 255, 255, 0.06);
+    --fas-border-strong: rgba(255, 255, 255, 0.1);
+
+    --fas-text: #f8fafc;
+    --fas-text-soft: #cbd5e1;
+    --fas-muted: #94a3b8;
+    --fas-muted-soft: #7b8da6;
+
+    --fas-hover: rgba(255, 255, 255, 0.05);
+    --fas-overlay: rgba(255, 255, 255, 0.025);
+
+    --fas-accent: #2563eb;
+    --fas-accent-hover: #3b82f6;
+    --fas-accent-text: #60a5fa;
+    --fas-accent-soft: rgba(37, 99, 235, 0.15);
+    --fas-accent-border: rgba(59, 130, 246, 0.35);
+
+    --fas-success: #34d399;
+    --fas-success-soft: rgba(16, 185, 129, 0.08);
+    --fas-warning: #fbbf24;
+    --fas-warning-soft: rgba(245, 158, 11, 0.08);
+    --fas-danger: #f87171;
+    --fas-danger-soft: rgba(248, 113, 113, 0.08);
+
+    --fas-shadow: rgba(0, 0, 0, 0.28);
+    --fas-shadow-card: 0 18px 45px rgba(0, 0, 0, 0.22);
+    --fas-shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.16);
+
+    color-scheme: dark;
+}
+
+html[data-theme="dark"] {
+    --fas-bg: #070b14;
+    --fas-surface: #0b101b;
+    --fas-card: #0c121e;
+    --fas-elevated: #111827;
+    --fas-input: #0a111d;
+    --fas-table-head: #0e1726;
+    --fas-table-hover: rgba(255, 255, 255, 0.025);
+
+    --fas-border: rgba(255, 255, 255, 0.06);
+    --fas-border-strong: rgba(255, 255, 255, 0.1);
+
+    --fas-text: #f8fafc;
+    --fas-text-soft: #cbd5e1;
+    --fas-muted: #94a3b8;
+    --fas-muted-soft: #7b8da6;
+
+    --fas-hover: rgba(255, 255, 255, 0.05);
+    --fas-overlay: rgba(255, 255, 255, 0.025);
+
+    --fas-success: #34d399;
+    --fas-success-soft: rgba(16, 185, 129, 0.08);
+    --fas-warning: #fbbf24;
+    --fas-warning-soft: rgba(245, 158, 11, 0.08);
+    --fas-danger: #f87171;
+    --fas-danger-soft: rgba(248, 113, 113, 0.08);
+
+    --fas-shadow: rgba(0, 0, 0, 0.28);
+    --fas-shadow-card: 0 18px 45px rgba(0, 0, 0, 0.22);
+    --fas-shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.16);
+
+    color-scheme: dark;
+}
+
+html[data-theme="light"] {
+    --fas-bg: #f4f7fb;
+    --fas-surface: #ffffff;
+    --fas-card: #ffffff;
+    --fas-elevated: #f8fafc;
+    --fas-input: #ffffff;
+    --fas-table-head: #f8fafc;
+    --fas-table-hover: rgba(37, 99, 235, 0.035);
+
+    --fas-border: rgba(15, 23, 42, 0.09);
+    --fas-border-strong: rgba(15, 23, 42, 0.14);
+
+    --fas-text: #0f172a;
+    --fas-text-soft: #334155;
+    --fas-muted: #64748b;
+    --fas-muted-soft: #64748b;
+
+    --fas-hover: rgba(15, 23, 42, 0.04);
+    --fas-overlay: rgba(15, 23, 42, 0.025);
+
+    --fas-accent-text: #2563eb;
+    --fas-success: #059669;
+    --fas-success-soft: rgba(5, 150, 105, 0.08);
+    --fas-warning: #b45309;
+    --fas-warning-soft: rgba(217, 119, 6, 0.08);
+    --fas-danger: #dc2626;
+    --fas-danger-soft: rgba(220, 38, 38, 0.07);
+
+    --fas-shadow: rgba(15, 23, 42, 0.08);
+    --fas-shadow-card: 0 14px 36px rgba(15, 23, 42, 0.07);
+    --fas-shadow-soft: 0 8px 24px rgba(15, 23, 42, 0.06);
+
+    color-scheme: light;
+}
+
+html[data-theme="system"] {
+    color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+    html[data-theme="system"] {
+        --fas-bg: #070b14;
+        --fas-surface: #0b101b;
+        --fas-card: #0c121e;
+        --fas-elevated: #111827;
+        --fas-input: #0a111d;
+        --fas-table-head: #0e1726;
+        --fas-table-hover: rgba(255, 255, 255, 0.025);
+
+        --fas-border: rgba(255, 255, 255, 0.06);
+        --fas-border-strong: rgba(255, 255, 255, 0.1);
+
+        --fas-text: #f8fafc;
+        --fas-text-soft: #cbd5e1;
+        --fas-muted: #94a3b8;
+        --fas-muted-soft: #7b8da6;
+
+        --fas-hover: rgba(255, 255, 255, 0.05);
+        --fas-overlay: rgba(255, 255, 255, 0.025);
+
+        --fas-accent-text: #60a5fa;
+        --fas-success: #34d399;
+        --fas-success-soft: rgba(16, 185, 129, 0.08);
+        --fas-warning: #fbbf24;
+        --fas-warning-soft: rgba(245, 158, 11, 0.08);
+        --fas-danger: #f87171;
+        --fas-danger-soft: rgba(248, 113, 113, 0.08);
+
+        --fas-shadow: rgba(0, 0, 0, 0.28);
+        --fas-shadow-card: 0 18px 45px rgba(0, 0, 0, 0.22);
+        --fas-shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.16);
+
+        color-scheme: dark;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    html[data-theme="system"] {
+        --fas-bg: #f4f7fb;
+        --fas-surface: #ffffff;
+        --fas-card: #ffffff;
+        --fas-elevated: #f8fafc;
+        --fas-input: #ffffff;
+        --fas-table-head: #f8fafc;
+        --fas-table-hover: rgba(37, 99, 235, 0.035);
+
+        --fas-border: rgba(15, 23, 42, 0.09);
+        --fas-border-strong: rgba(15, 23, 42, 0.14);
+
+        --fas-text: #0f172a;
+        --fas-text-soft: #334155;
+        --fas-muted: #64748b;
+        --fas-muted-soft: #64748b;
+
+        --fas-hover: rgba(15, 23, 42, 0.04);
+        --fas-overlay: rgba(15, 23, 42, 0.025);
+
+        --fas-accent-text: #2563eb;
+        --fas-success: #059669;
+        --fas-success-soft: rgba(5, 150, 105, 0.08);
+        --fas-warning: #b45309;
+        --fas-warning-soft: rgba(217, 119, 6, 0.08);
+        --fas-danger: #dc2626;
+        --fas-danger-soft: rgba(220, 38, 38, 0.07);
+
+        --fas-shadow: rgba(15, 23, 42, 0.08);
+        --fas-shadow-card: 0 14px 36px rgba(15, 23, 42, 0.07);
+        --fas-shadow-soft: 0 8px 24px rgba(15, 23, 42, 0.06);
+
+        color-scheme: light;
+    }
+}
+
+html[data-accent="blue"] {
+    --fas-accent: #2563eb;
+    --fas-accent-hover: #3b82f6;
+    --fas-accent-text: #60a5fa;
+    --fas-accent-soft: rgba(37, 99, 235, 0.14);
+    --fas-accent-border: rgba(37, 99, 235, 0.32);
+}
+
+html[data-theme="light"][data-accent="blue"] {
+    --fas-accent-text: #2563eb;
+}
+
+@media (prefers-color-scheme: light) {
+    html[data-theme="system"][data-accent="blue"] {
+        --fas-accent-text: #2563eb;
+    }
+}
+
+html[data-accent="indigo"] {
+    --fas-accent: #4f46e5;
+    --fas-accent-hover: #6366f1;
+    --fas-accent-text: #818cf8;
+    --fas-accent-soft: rgba(79, 70, 229, 0.14);
+    --fas-accent-border: rgba(79, 70, 229, 0.32);
+}
+
+html[data-theme="light"][data-accent="indigo"] {
+    --fas-accent-text: #4f46e5;
+}
+
+@media (prefers-color-scheme: light) {
+    html[data-theme="system"][data-accent="indigo"] {
+        --fas-accent-text: #4f46e5;
+    }
+}
+
+html[data-accent="emerald"] {
+    --fas-accent: #059669;
+    --fas-accent-hover: #10b981;
+    --fas-accent-text: #34d399;
+    --fas-accent-soft: rgba(5, 150, 105, 0.14);
+    --fas-accent-border: rgba(5, 150, 105, 0.32);
+}
+
+html[data-theme="light"][data-accent="emerald"] {
+    --fas-accent-text: #047857;
+}
+
+@media (prefers-color-scheme: light) {
+    html[data-theme="system"][data-accent="emerald"] {
+        --fas-accent-text: #047857;
+    }
+}
+
+html,
+body,
+#app {
+    min-height: 100%;
+}
+
+html {
+    background: var(--fas-bg);
+    scrollbar-width: thin;
+    scrollbar-color: var(--fas-muted-soft) transparent;
+}
+
+body {
+    margin: 0;
+    background: var(--fas-bg);
+    color: var(--fas-text);
+    transition:
+        background-color 250ms ease,
+        color 250ms ease;
+}
+
+#app {
+    background: var(--fas-bg);
+    color: var(--fas-text);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    color: inherit;
+}
+
+::selection {
+    background: var(--fas-accent-soft);
+    color: var(--fas-text);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--fas-muted) 40%, transparent);
+    border: 2px solid transparent;
+    border-radius: 999px;
+    background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in srgb, var(--fas-accent) 55%, transparent);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+/* Tailwind compatibility */
+html[data-theme="light"] [class*="bg-[#070b14]"],
+html[data-theme="light"] [class*="bg-[#070d18]"] {
+    background-color: var(--fas-bg) !important;
+}
+
+html[data-theme="light"] [class*="bg-[#0b101b]"],
+html[data-theme="light"] [class*="bg-[#0d1524]"] {
+    background-color: var(--fas-surface) !important;
+}
+
+html[data-theme="light"] [class*="bg-[#0c121e]"] {
+    background-color: var(--fas-card) !important;
+}
+
+html[data-theme="light"] [class*="bg-[#111827]"],
+html[data-theme="light"] [class*="bg-[#111b2b]"] {
+    background-color: var(--fas-elevated) !important;
+}
+
+html[data-theme="light"] [class~="text-white"],
+html[data-theme="light"] [class~="text-slate-100"] {
+    color: var(--fas-text) !important;
+}
+
+html[data-theme="light"] [class~="text-slate-200"] {
+    color: var(--fas-text-soft) !important;
+}
+
+html[data-theme="light"] [class~="text-slate-300"] {
+    color: #475569 !important;
+}
+
+html[data-theme="light"] [class~="text-slate-400"],
+html[data-theme="light"] [class~="text-slate-500"] {
+    color: #64748b !important;
+}
+
+html[data-theme="light"] [class~="text-slate-600"] {
+    color: #94a3b8 !important;
+}
+
+html[data-theme="light"] [class*="border-white"] {
+    border-color: var(--fas-border) !important;
+}
+
+html[data-theme="light"] [class*="bg-white/["] {
+    background-color: var(--fas-overlay) !important;
+}
+
+[class~="text-blue-400"] {
+    color: var(--fas-accent-text) !important;
+}
+
+[class~="bg-blue-600"] {
+    background-color: var(--fas-accent) !important;
+}
+
+[class~="bg-blue-500"] {
+    background-color: var(--fas-accent-hover) !important;
+}
+
+[class~="bg-blue-600/15"] {
+    background-color: var(--fas-accent-soft) !important;
+}
+
+[class~="border-blue-600"],
+[class~="border-blue-500"] {
+    border-color: var(--fas-accent) !important;
+}
+
+/* Shared dashboard / overview surfaces */
+.premium-card,
+.settings-card {
+    background: var(--fas-card) !important;
+    border-color: var(--fas-border) !important;
+    box-shadow: var(--fas-shadow-card) !important;
+}
+
+.status-row {
+    background: var(--fas-overlay) !important;
+    border-color: var(--fas-border) !important;
+}
+
+.settings-title {
+    color: var(--fas-text) !important;
+}
+
+.option-button {
+    background: var(--fas-overlay) !important;
+    border-color: var(--fas-border) !important;
+    color: var(--fas-muted) !important;
+}
+
+.option-button:hover {
+    background: var(--fas-hover) !important;
+    color: var(--fas-text) !important;
+}
+
+.option-active {
+    background: var(--fas-accent-soft) !important;
+    border-color: var(--fas-accent-border) !important;
+    color: var(--fas-accent-text) !important;
+}
+
+/* Operations uses global tokens already. Keep all surfaces synchronized. */
+.operations-page {
+    color: var(--fas-text);
+}
+
+.operations-page :is(.summary-card,
+    .panel,
+    .generated-field,
+    .readonly-box,
+    .selected-product-preview,
+    .fas-select-trigger,
+    .fas-dropdown,
+    .custom-select-trigger,
+    .custom-select-menu) {
+    border-color: var(--fas-border) !important;
+    background: var(--fas-card) !important;
+    color: var(--fas-text) !important;
+}
+
+.operations-page :is(.field-input,
+    .form-input,
+    .search-input,
+    input,
+    select,
+    textarea) {
+    border-color: var(--fas-border) !important;
+    background: var(--fas-input) !important;
+    color: var(--fas-text) !important;
+}
+
+.operations-page :is(.fas-dropdown-search,
+    .product-dropdown-header) {
+    border-color: var(--fas-border) !important;
+    background: var(--fas-elevated) !important;
+}
+
+.operations-page :is(.fas-dropdown-option,
+    .custom-option,
+    .quick-size):hover {
+    background: var(--fas-hover) !important;
+}
+
+.operations-page :is(.summary-label,
+    .summary-helper,
+    .page-description,
+    .field-helper,
+    .preview-meta,
+    .workflow-item p,
+    .generated-sub,
+    .optional-label) {
+    color: var(--fas-muted) !important;
+}
+
+.operations-page :is(.summary-value,
+    .panel-title,
+    .generated-value,
+    .preview-name,
+    .workflow-item strong,
+    .preview-stock strong,
+    .preview-price strong) {
+    color: var(--fas-text) !important;
+}
+
+.operations-page .secondary-button {
+    border-color: var(--fas-border) !important;
+    background: var(--fas-card) !important;
+    color: var(--fas-text-soft) !important;
+}
+
+/* Distribution had its own hard-coded dark variables. Force it back to global tokens. */
+html[data-theme="light"] .distribution-page {
+    --fas-bg: #f4f7fb !important;
+    --fas-card: #ffffff !important;
+    --fas-overlay: #f8fafc !important;
+    --fas-border: rgba(15, 23, 42, 0.09) !important;
+    --fas-text: #0f172a !important;
+    --fas-text-soft: #334155 !important;
+    --fas-muted: #64748b !important;
+    --fas-accent-text: var(--fas-accent) !important;
+    --fas-shadow: rgba(15, 23, 42, 0.08) !important;
+}
+
+@media (prefers-color-scheme: light) {
+    html[data-theme="system"] .distribution-page {
+        --fas-bg: #f4f7fb !important;
+        --fas-card: #ffffff !important;
+        --fas-overlay: #f8fafc !important;
+        --fas-border: rgba(15, 23, 42, 0.09) !important;
+        --fas-text: #0f172a !important;
+        --fas-text-soft: #334155 !important;
+        --fas-muted: #64748b !important;
+        --fas-accent-text: var(--fas-accent) !important;
+        --fas-shadow: rgba(15, 23, 42, 0.08) !important;
+    }
+}
+
+.distribution-page :is(.summary-card,
+    .toolbar,
+    .shipment-card,
+    .distribution-archive-info,
+    .shipment-detail,
+    .detail-grid > div) {
+    border-color: var(--fas-border) !important;
+    background: var(--fas-card) !important;
+    color: var(--fas-text) !important;
+    box-shadow: var(--fas-shadow-soft) !important;
+}
+
+.distribution-page :is(.search-input,
+    .filter-select,
+    input,
+    select,
+    textarea) {
+    border-color: var(--fas-border) !important;
+    background: var(--fas-input) !important;
+    color: var(--fas-text) !important;
+}
+
+.distribution-page :is(.summary-label,
+    .summary-helper,
+    .page-description,
+    .shipment-meta,
+    .detail-table th,
+    .detail-table td small,
+    .distribution-archive-info span,
+    .distribution-archive-note) {
+    color: var(--fas-muted) !important;
+}
+
+.distribution-page :is(.summary-value,
+    .page-title,
+    .shipment-main strong,
+    .detail-table td strong) {
+    color: var(--fas-text) !important;
+}
+
+.distribution-page .refresh-button {
+    border-color: var(--fas-border) !important;
+    background: var(--fas-card) !important;
+    color: var(--fas-text-soft) !important;
+}
+
+/* Finance overview */
+.finance-view {
+    color: var(--fas-text) !important;
+}
+
+.finance-view :is(.card,
+    .panel,
+    .quick-grid button) {
+    border-color: var(--fas-border) !important;
+    background: var(--fas-card) !important;
+    color: var(--fas-text) !important;
+    box-shadow: var(--fas-shadow-card) !important;
+}
+
+.finance-view :is(.description,
+    .card span,
+    .card small,
+    .panel p,
+    .quick-grid span) {
+    color: var(--fas-muted) !important;
+}
+
+.finance-view :is(h1,
+    h2,
+    .card strong,
+    .quick-grid strong) {
+    color: var(--fas-text) !important;
+}
+
+.finance-view .finance-nav button,
+.finance-view .button-secondary {
+    border-color: var(--fas-border) !important;
+    background: var(--fas-card) !important;
+    color: var(--fas-muted) !important;
+}
+
+.finance-view .finance-nav button:hover,
+.finance-view .quick-grid button:hover {
+    background: var(--fas-hover) !important;
+    color: var(--fas-text) !important;
+}
+
+.finance-view .finance-nav button.active {
+    border-color: var(--fas-accent-border) !important;
+    background: var(--fas-accent-soft) !important;
+    color: var(--fas-accent-text) !important;
+}
+
+/* Finance detailed pages. These rules intentionally override old dark-only scoped CSS. */
+html[data-theme="light"] .finance-page :is(.summary-card,
+    .analytics-panel,
+    .filters-panel,
+    .sales-panel,
+    .customer-tax-panel,
+    .metric-box,
+    .ratio-card,
+    .customer-summary-grid article,
+    .customer-modal,
+    .report-preview-modal,
+    .invoice-modal) {
+    border-color: var(--fas-border) !important;
+    background: var(--fas-card) !important;
+    color: var(--fas-text) !important;
+    box-shadow: var(--fas-shadow-card) !important;
+}
+
+@media (prefers-color-scheme: light) {
+
+    html[data-theme="system"] .finance-page :is(.summary-card,
+        .analytics-panel,
+        .filters-panel,
+        .sales-panel,
+        .customer-tax-panel,
+        .metric-box,
+        .ratio-card,
+        .customer-summary-grid article,
+        .customer-modal,
+        .report-preview-modal,
+        .invoice-modal) {
+        border-color: var(--fas-border) !important;
+        background: var(--fas-card) !important;
+        color: var(--fas-text) !important;
+        box-shadow: var(--fas-shadow-card) !important;
+    }
+}
+
+html[data-theme="light"] .finance-page :is(.secondary-button,
+    .finance-section-link,
+    .preset-button,
+    .finance-select,
+    .search-shell,
+    .table-status,
+    .table-report-button,
+    .customer-edit-button,
+    .view-invoice-button,
+    .page-button,
+    .close-invoice-button) {
+    border-color: var(--fas-border) !important;
+    background: var(--fas-elevated) !important;
+    color: var(--fas-text-soft) !important;
+}
+
+@media (prefers-color-scheme: light) {
+
+    html[data-theme="system"] .finance-page :is(.secondary-button,
+        .finance-section-link,
+        .preset-button,
+        .finance-select,
+        .search-shell,
+        .table-status,
+        .table-report-button,
+        .customer-edit-button,
+        .view-invoice-button,
+        .page-button,
+        .close-invoice-button) {
+        border-color: var(--fas-border) !important;
+        background: var(--fas-elevated) !important;
+        color: var(--fas-text-soft) !important;
+    }
+}
+
+html[data-theme="light"] .finance-page :is(input,
+    select,
+    textarea) {
+    border-color: var(--fas-border) !important;
+    background: var(--fas-input) !important;
+    color: var(--fas-text) !important;
+    color-scheme: light !important;
+}
+
+@media (prefers-color-scheme: light) {
+
+    html[data-theme="system"] .finance-page :is(input,
+        select,
+        textarea) {
+        border-color: var(--fas-border) !important;
+        background: var(--fas-input) !important;
+        color: var(--fas-text) !important;
+        color-scheme: light !important;
+    }
+}
+
+html[data-theme="light"] .finance-page :is(.summary-value,
+    .metric-box strong,
+    .ratio-heading strong,
+    .section-heading h2,
+    .finance-title,
+    .sales-panel strong,
+    .customer-tax-panel strong,
+    .customer-modal h3) {
+    color: var(--fas-text) !important;
+}
+
+@media (prefers-color-scheme: light) {
+
+    html[data-theme="system"] .finance-page :is(.summary-value,
+        .metric-box strong,
+        .ratio-heading strong,
+        .section-heading h2,
+        .finance-title,
+        .sales-panel strong,
+        .customer-tax-panel strong,
+        .customer-modal h3) {
+        color: var(--fas-text) !important;
+    }
+}
+
+html[data-theme="light"] .finance-page :is(.summary-label,
+    .summary-detail,
+    .metric-box span,
+    .metric-box small,
+    .ratio-heading span,
+    .finance-description,
+    .last-update,
+    .table-description,
+    .customer-tax-heading p,
+    .customer-table-footer,
+    td small) {
+    color: var(--fas-muted) !important;
+}
+
+@media (prefers-color-scheme: light) {
+
+    html[data-theme="system"] .finance-page :is(.summary-label,
+        .summary-detail,
+        .metric-box span,
+        .metric-box small,
+        .ratio-heading span,
+        .finance-description,
+        .last-update,
+        .table-description,
+        .customer-tax-heading p,
+        .customer-table-footer,
+        td small) {
+        color: var(--fas-muted) !important;
+    }
+}
+
+html[data-theme="light"] .finance-page :is(.finance-table,
+    .customer-tax-table) thead th {
+    border-color: var(--fas-border) !important;
+    background: var(--fas-table-head) !important;
+    color: var(--fas-muted) !important;
+}
+
+html[data-theme="light"] .finance-page :is(.finance-table,
+    .customer-tax-table) tbody td {
+    border-color: var(--fas-border) !important;
+    background: var(--fas-card) !important;
+    color: var(--fas-text-soft) !important;
+}
+
+html[data-theme="light"] .finance-page :is(.finance-table,
+    .customer-tax-table) tbody tr:hover td {
+    background: var(--fas-table-hover) !important;
+}
+
+@media (prefers-color-scheme: light) {
+
+    html[data-theme="system"] .finance-page :is(.finance-table,
+        .customer-tax-table) thead th {
+        border-color: var(--fas-border) !important;
+        background: var(--fas-table-head) !important;
+        color: var(--fas-muted) !important;
+    }
+
+    html[data-theme="system"] .finance-page :is(.finance-table,
+        .customer-tax-table) tbody td {
+        border-color: var(--fas-border) !important;
+        background: var(--fas-card) !important;
+        color: var(--fas-text-soft) !important;
+    }
+
+    html[data-theme="system"] .finance-page :is(.finance-table,
+        .customer-tax-table) tbody tr:hover td {
+        background: var(--fas-table-hover) !important;
+    }
+}
+
+html[data-theme="light"] .finance-page :is(.finance-section-link-active,
+    .preset-active) {
+    border-color: var(--fas-accent-border) !important;
+    background: var(--fas-accent-soft) !important;
+    color: var(--fas-accent-text) !important;
+}
+
+@media (prefers-color-scheme: light) {
+
+    html[data-theme="system"] .finance-page :is(.finance-section-link-active,
+        .preset-active) {
+        border-color: var(--fas-accent-border) !important;
+        background: var(--fas-accent-soft) !important;
+        color: var(--fas-accent-text) !important;
+    }
+}
+
+html[data-theme="light"] .finance-page .ratio-track {
+    background: #e7edf5 !important;
+}
+
+@media (prefers-color-scheme: light) {
+    html[data-theme="system"] .finance-page .ratio-track {
+        background: #e7edf5 !important;
+    }
+}
+
+/* Real-time Finance chart light mode */
+html[data-theme="light"] .analytics-page :is(.period-panel,
+    .summary-card,
+    .market-panel,
+    .transaction-panel,
+    .mix-grid article) {
+    border-color: var(--fas-border) !important;
+    background: var(--fas-card) !important;
+    color: var(--fas-text) !important;
+    box-shadow: var(--fas-shadow-card) !important;
+}
+
+html[data-theme="light"] .analytics-page :is(.finance-nav a,
+    .preset-list button,
+    .metric-tabs button,
+    .market-meta > span,
+    .action-button.secondary,
+    .apply-button,
+    .custom-period input) {
+    border-color: var(--fas-border) !important;
+    background: var(--fas-elevated) !important;
+    color: var(--fas-text-soft) !important;
+}
+
+html[data-theme="light"] .analytics-page :is(.finance-nav a.active,
+    .preset-list button.active,
+    .metric-tabs button.active) {
+    border-color: var(--fas-accent-border) !important;
+    background: var(--fas-accent-soft) !important;
+    color: var(--fas-accent-text) !important;
+}
+
+html[data-theme="light"] .analytics-page :is(.analytics-header h1,
+    .summary-card > strong,
+    .market-header h2,
+    .market-value-row > strong,
+    .market-footer strong,
+    .transaction-panel h2) {
+    color: var(--fas-text) !important;
+}
+
+html[data-theme="light"] .analytics-page :is(.analytics-header p,
+    .summary-card span,
+    .summary-card p,
+    .market-header p,
+    .market-footer span,
+    .market-footer small,
+    .mix-top span) {
+    color: var(--fas-muted) !important;
+}
+
+html[data-theme="light"] .analytics-page .grid-lines line {
+    stroke: rgba(15, 23, 42, 0.09) !important;
+}
+
+html[data-theme="light"] .analytics-page :is(.grid-lines text,
+    .x-axis-labels text) {
+    fill: #64748b !important;
+}
+
+html[data-theme="light"] .analytics-page .chart-tooltip {
+    border-color: var(--fas-border) !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12) !important;
+}
+
+html[data-theme="light"] .analytics-page .chart-tooltip strong {
+    color: var(--fas-text) !important;
+}
+
+@media (prefers-color-scheme: light) {
+
+    html[data-theme="system"] .analytics-page :is(.period-panel,
+        .summary-card,
+        .market-panel,
+        .transaction-panel,
+        .mix-grid article) {
+        border-color: var(--fas-border) !important;
+        background: var(--fas-card) !important;
+        color: var(--fas-text) !important;
+        box-shadow: var(--fas-shadow-card) !important;
+    }
+
+    html[data-theme="system"] .analytics-page :is(.finance-nav a,
+        .preset-list button,
+        .metric-tabs button,
+        .market-meta > span,
+        .action-button.secondary,
+        .apply-button,
+        .custom-period input) {
+        border-color: var(--fas-border) !important;
+        background: var(--fas-elevated) !important;
+        color: var(--fas-text-soft) !important;
+    }
+
+    html[data-theme="system"] .analytics-page :is(.finance-nav a.active,
+        .preset-list button.active,
+        .metric-tabs button.active) {
+        border-color: var(--fas-accent-border) !important;
+        background: var(--fas-accent-soft) !important;
+        color: var(--fas-accent-text) !important;
+    }
+
+    html[data-theme="system"] .analytics-page :is(.analytics-header h1,
+        .summary-card > strong,
+        .market-header h2,
+        .market-value-row > strong,
+        .market-footer strong,
+        .transaction-panel h2) {
+        color: var(--fas-text) !important;
+    }
+
+    html[data-theme="system"] .analytics-page :is(.analytics-header p,
+        .summary-card span,
+        .summary-card p,
+        .market-header p,
+        .market-footer span,
+        .market-footer small,
+        .mix-top span) {
+        color: var(--fas-muted) !important;
+    }
+
+    html[data-theme="system"] .analytics-page .grid-lines line {
+        stroke: rgba(15, 23, 42, 0.09) !important;
+    }
+
+    html[data-theme="system"] .analytics-page :is(.grid-lines text,
+        .x-axis-labels text) {
+        fill: #64748b !important;
+    }
+
+    html[data-theme="system"] .analytics-page .chart-tooltip {
+        border-color: var(--fas-border) !important;
+        background: rgba(255, 255, 255, 0.98) !important;
+        box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12) !important;
+    }
+
+    html[data-theme="system"] .analytics-page .chart-tooltip strong {
+        color: var(--fas-text) !important;
+    }
+}
+
+/* Paper previews stay paper-like in both themes. */
+:is(.invoice-document,
+    .invoice-original-document,
+    .report-paper) {
+    color-scheme: light;
+}
+
+.invoice-print-overlay,
+.invoice-original-preview-stage,
+.report-paper-stage {
+    color-scheme: light;
+}
+
+html[data-density="comfortable"] {
+    font-size: 16px;
+}
+
+html[data-density="compact"] {
+    font-size: 15px;
+}
+
+.fas-shell::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    background: var(--fas-brightness-color, #000000);
+    opacity: var(--fas-brightness-opacity, 0);
+    transition:
+        opacity 180ms ease,
+        background-color 180ms ease;
+}
+
+@media (max-width: 639px) {
+    .settings-card {
+        border-radius: 1.15rem;
+        padding: 1.1rem;
+    }
+}
+
+/* Shared controls and portals use the same theme in every module. */
+html[data-theme] body .fas-choice.fas-choice {
+    min-width: 0;
+    max-width: 100%;
+    border: 0 !important;
+    border-radius: 0;
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+:is(.operations-page, .distribution-page, .finance-page) :is(input:not([type="hidden"]), textarea) {
+    border-color: var(--fas-border-strong) !important;
+    background: var(--fas-input) !important;
+    color: var(--fas-text) !important;
+    caret-color: var(--fas-accent);
+}
+
+:is(.operations-page, .distribution-page, .finance-page) :is(input:not([type="hidden"]), textarea):focus {
+    outline: none;
+    border-color: var(--fas-accent-border) !important;
+    box-shadow: 0 0 0 3px var(--fas-accent-soft);
+}
+
+:is(.operations-page, .distribution-page, .finance-page) :is(input, textarea)::placeholder {
+    color: var(--fas-muted);
+    opacity: 0.85;
+}
+
+.finance-page :is(.summary-card, .analytics-panel, .filters-panel, .sales-panel,
+    .customer-tax-panel, .metric-box, .ratio-card, .customer-summary-grid article) {
+    border-color: var(--fas-border) !important;
+    background: var(--fas-card) !important;
+    color: var(--fas-text) !important;
+}
+
+.finance-page :is(.secondary-button, .finance-section-link, .preset-button,
+    .search-shell, .customer-edit-button, .view-invoice-button, .page-button) {
+    border-color: var(--fas-border-strong) !important;
+    background: var(--fas-elevated) !important;
+    color: var(--fas-text-soft) !important;
+}
+
+.finance-page :is(.preset-active, .finance-section-active) {
+    border-color: var(--fas-accent-border) !important;
+    background: var(--fas-accent-soft) !important;
+    color: var(--fas-accent-text) !important;
+}
+
+:is(.customer-modal, .report-preview-modal, .invoice-modal) {
+    border-color: var(--fas-border-strong) !important;
+    background: var(--fas-card) !important;
+    color: var(--fas-text) !important;
+    box-shadow: var(--fas-shadow-card) !important;
+    color-scheme: inherit;
+}
+
+:is(.customer-modal-header, .customer-modal-actions, .report-preview-toolbar, .invoice-modal-header) {
+    border-color: var(--fas-border) !important;
+    background: var(--fas-card) !important;
+    color: var(--fas-text) !important;
+}
+
+:is(.customer-modal, .report-preview-modal, .invoice-modal) :is(h2, h3) {
+    color: var(--fas-text) !important;
+}
+
+:is(.customer-modal, .report-preview-modal, .invoice-modal) :is(.secondary-button, .close-invoice-button) {
+    border-color: var(--fas-border-strong) !important;
+    background: var(--fas-elevated) !important;
+    color: var(--fas-text-soft) !important;
+}
+
+:is(.customer-modal, .report-preview-modal, .invoice-modal) .primary-button {
+    border-color: var(--fas-accent);
+    background: var(--fas-accent) !important;
+    color: #ffffff !important;
+}
+
+:is(.customer-modal-header, .report-preview-toolbar, .invoice-modal-header)>div>p {
+    color: var(--fas-accent-text) !important;
+}
+
+:is(.customer-modal-header, .report-preview-toolbar, .invoice-modal-header) small {
+    color: var(--fas-muted) !important;
+}
+
+.customer-modal :is(input, textarea) {
+    background: var(--fas-input) !important;
+    color: var(--fas-text) !important;
+    border-color: var(--fas-border-strong) !important;
+}
+
+.customer-modal :is(input, textarea):focus {
+    border-color: var(--fas-accent-border) !important;
+    box-shadow: 0 0 0 3px var(--fas-accent-soft);
+}
+
+.customer-modal .customer-toggle-on {
+    border-color: var(--fas-accent-border) !important;
+    background: var(--fas-accent-soft) !important;
+    color: var(--fas-accent-text) !important;
+}
+
+:is(.customer-modal, .report-preview-modal, .invoice-modal) button:focus-visible {
+    outline: 2px solid var(--fas-accent);
+    outline-offset: 3px;
+}
+
+:is(.operations-page, .distribution-page) .fas-icon {
+    width: 1.125rem;
+    height: 1.125rem;
+    stroke-width: 1.8;
+}
+
+.operations-page .fas-select-trigger {
+    border-color: var(--fas-border-strong) !important;
+    background: var(--fas-input) !important;
+}
+
+.operations-page .fas-dropdown {
+    border-color: var(--fas-accent-border) !important;
+    background: var(--fas-elevated) !important;
+}
+
+.operations-page .fas-dropdown-list {
+    background: var(--fas-elevated);
+}
+
+.operations-page .fas-dropdown-option:hover,
+.operations-page .fas-dropdown-option:focus-visible {
+    background: var(--fas-accent-soft) !important;
+    color: var(--fas-accent-text) !important;
+}
+
+.operations-page .fas-option-main strong {
+    color: var(--fas-text);
+    font-size: 0.8rem;
+}
+
+.operations-page .fas-option-main small {
+    color: var(--fas-muted);
+    font-size: 0.68rem;
+}
+
+/* Quantity fields share the same surface in the picker and table. */
+html[data-theme] .operations-page .qty-stepper {
+    border-color: var(--fas-border-strong);
+    background: var(--fas-input);
+    color: var(--fas-text);
+}
+
+html[data-theme] .operations-page input.qty-stepper-input,
+html[data-theme] .operations-page input.qty-stepper-input:focus {
+    border: 0 !important;
+    border-radius: 0;
+    background: transparent !important;
+    padding: 0;
+    color: var(--fas-text) !important;
+    box-shadow: none;
+    outline: none;
+}
+
+html[data-theme] .operations-page .qty-stepper-button {
+    background: var(--fas-accent-soft);
+    color: var(--fas-accent-text);
+}
+
+html[data-theme] .operations-page .qty-stepper-button:hover {
+    background: var(--fas-accent);
+    color: #ffffff;
+}
+
+.operations-page .add-item-icon {
+    color: inherit;
+}
+
+.operations-page .product-trigger-copy strong,
+.operations-page .product-option-copy>strong {
+    color: var(--fas-text);
+}
+
+.operations-page .product-trigger-copy small {
+    color: var(--fas-muted);
+}
+
+.inventory-page .custom-select-trigger:focus {
+    outline: none;
+}
+
+.inventory-page .custom-select-trigger:focus-visible {
+    border-color: var(--fas-accent-border);
+    box-shadow: 0 0 0 3px var(--fas-accent-soft);
+}
+
+/* The same readable Finance navigation is used on every Finance route. */
+:is(.finance-view, .finance-page, .analytics-page, .receivables-page) :is(.finance-nav, .finance-section-nav) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem !important;
+    margin: 1.2rem 0 !important;
+}
+
+:is(.finance-view, .finance-page, .analytics-page, .receivables-page) :is(.finance-nav, .finance-section-nav) :is(a, button) {
+    display: inline-flex;
+    min-height: 2.4rem !important;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    border: 1px solid var(--fas-border) !important;
+    border-radius: 0.75rem !important;
+    background: var(--fas-card) !important;
+    padding: 0.55rem 0.75rem !important;
+    color: var(--fas-muted) !important;
+    font-size: 0.75rem !important;
+    font-weight: 400 !important;
+    line-height: 1.4 !important;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+:is(.finance-view, .finance-page, .analytics-page, .receivables-page) :is(.finance-nav, .finance-section-nav) :is(a, button):is(.active, .finance-section-link-active) {
+    border-color: var(--fas-accent-border) !important;
+    background: var(--fas-accent-soft) !important;
+    color: var(--fas-accent-text) !important;
+}
+
+:is(.finance-view, .finance-page, .analytics-page, .receivables-page) :is(.finance-nav, .finance-section-nav) :is(a, button):focus-visible {
+    outline: 2px solid var(--fas-accent);
+    outline-offset: 2px;
+}
+
+:is(.finance-view, .finance-page, .analytics-page, .receivables-page) :is(.finance-nav, .finance-section-nav) :is(a, button):focus:not(:focus-visible) {
+    outline: none;
+}
+
+html[data-theme] .analytics-page .custom-period input {
+    border-color: var(--fas-border-strong) !important;
+    background: var(--fas-input) !important;
+    color: var(--fas-text) !important;
+}

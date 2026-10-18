@@ -12,7 +12,7 @@ COPY . .
 
 # Build the application
 # Using CGO_ENABLED=0 for a static binary which is ideal for Alpine
-RUN CGO_ENABLED=0 GOOS=linux go build -o main .
+RUN CGO_ENABLED=0 GOOS=linux go build -o main ./fas-server/api
 
 # Run stage
 FROM alpine:latest
