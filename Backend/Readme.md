@@ -24,12 +24,27 @@ go mod download
 
 ## Compile and run the project
 
-```bash
-# development
-go run ./fas-server/api
+Run the commands from the `Backend` directory.
 
-# build
-go build -o fas-api ./fas-server/api
+```bash
+# development (load environment from repository root)
+go run ./fas-server/api -env ../.env
+
+# build (Windows)
+go build -o fas-api.exe ./fas-server/api
+```
+
+## Code formatting
+
+```bash
+# format all Go packages
+go fmt ./...
+
+# format handlers and database packages only
+go fmt ./handlers ./internal/database
+
+# format the API package only
+go fmt ./fas-server/api
 ```
 
 ## Run tests
